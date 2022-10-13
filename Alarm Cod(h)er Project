@@ -1,0 +1,15 @@
+import datetime
+import time
+from playsound import playsound
+AlarmHour=int(input("Enter Hour: "))
+AlarmMin=int(input("Enter Minute: "))
+AlarmSec=int(input("Enter Second: "))
+AmPm=str(input("Am or Pm: "))
+if (AmPm =="Pm"):
+    AlarmHour += 12
+print("The alarm will ring at ",AlarmHour,AlarmMin,AlarmSec,AmPm)
+while(True):
+    if(AlarmHour== datetime.datetime.now().hour and AlarmMin== datetime.datetime.now().minute):
+        print("The alarm is ringing......")
+        playsound(r"C:\Users\HP\Downloads\cute-alarm-ringtone-549.mp3")
+        break
